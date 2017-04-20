@@ -39,5 +39,7 @@
     <input type="submit" name="Register">
   </form>
 
+  <a href="/traitorsServlet"> Move to a servlet</a>
+
   </body>
 </html>
