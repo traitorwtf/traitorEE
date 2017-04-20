@@ -14,10 +14,21 @@
 <jsp:include page="Header.html" />
 <br>
 <br>
-<h3>Hello Java Web!</h3>
 <h1> <%= HelloClass.sayHello("traitor")%></h1>
-<br/>
+<h3>Hello Java Web!</h3>
 <p style="color: cadetblue"> New registered account is: <%= request.getParameter("firstName")%>
     <%= request.getParameter("lastName")%></p>
+<p style="color: coral"> Alternative way: ${param.get("firstName")}  ${param.get("lastName")}</p>
+
+<p style="color: cadetblue"> Country: <%= request.getParameter("countryList")%></p>
+<p style="color: cadetblue"> Sex: <%= request.getParameter("sex")%></p>
+<%! String getLanguages(String[] langs){
+    String result = "";
+    for (String x: langs) {
+        result+= "<li style='color: cadetblue'> "+ x+ " ";
+    }
+    return result;
+}%>
+<p style="color: cadetblue"> Languages: <%= getLanguages(request.getParameterValues("language"))%></p>
 </body>
 </html>
