@@ -1,46 +1,40 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: traitorwtf
-  Date: 19.04.2017
-  Time: 18:05
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="something.HelloClass" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+
 <html>
-  <head>
-    <title>traitor's page!</title>
-  </head>
-  <body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Аниме база::Вход</title>
+        <link href="css/style_index.css" rel="stylesheet" type="text/css">
+    </head>
 
-  <h3>Registration form</h3>
+    <body>
+        <div class="main">
 
-  <br/>
+            <div class="content">
+                <p class="title"><span class="text"><img src="../images/logo.jpg" width="77" height="77" hspace="10" vspace="10" align="middle"></span></p>
+                <p class="title">Аниме база</p>
+                <p class="text">Добро пожаловать в онлайн аниме базу, где вы сможете найти аниме на ваш вкус. Доступны функции поиска, просмотра, сортировки и многие другие.</p>
+                <p class="text">Проект находится в разработке, поэтому дизайн и функционал будет постоянно дорабатываться.</p>
+                <p class="text">По всем вопросам обращайтесь по адресу <a href="mailto:support@testanimebase.com">support@testanimebase.com</a></p>
+                <p>&nbsp;</p>
 
-  <form action="testEE.jsp" style="border: 5px solid grey; padding: 10px; width: 200px; ">
-    First name <br>
-    <input type="text" name="firstName"> <br>
-    Last name <br>
-    <input type="text" name="lastName"> <br><br>
-    <select name="countryList">
-      <option>Russia</option>
-      <option>North Korea</option>
-      <option>Japan</option>
-      <option>South Korea</option>
-    </select> <br><br>
-    <input type="radio" name="sex" value="male">Male </input>
-    <input type="radio" name="sex" value="female">Female</input>
-    <br><br>
-    Choose languages: <br>
-    <input type="checkbox" name="language" value="Ru">Ru</input>
-    <input type="checkbox" name="language" value="En">En</input>
-    <input type="checkbox" name="language" value="Jp">Jp</input>
-    <br><br>
-    <input type="submit" name="Register">
-  </form>
+            </div>
 
-  <a href="/traitorsServlet"> Move to a servlet</a>
-  <a href="/testDB.jsp"> Test DB</a>
+            <div class="login_div">
+                <p class="title">Для входа введит свои данные:</p>
+                <form class="login_form" name="username" action="pages/main.jsp" method="POST">
+                    Имя: <input type="text" name="username" value="" size="20" />
+                    <input type="submit" value="Войти" />
+                </form>
 
-  </body>
+            </div>
+
+            <div class="footer">
+                Разработчик: traitor, 2017 г
+            </div>
+        </div>
+
+
+    </body>
 </html>
