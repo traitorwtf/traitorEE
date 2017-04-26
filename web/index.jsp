@@ -40,6 +40,7 @@
   </form>
 
   <a href="/traitorsServlet"> Move to a servlet</a>
+  <a href="/testDB.jsp"> Test DB</a>
 
   </body>
 </html>

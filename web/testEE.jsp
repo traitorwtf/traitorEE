@@ -30,5 +30,8 @@
     return result;
 }%>
 <p style="color: cadetblue"> Languages: <%= getLanguages(request.getParameterValues("language"))%></p>
+<br><br>
+<h1>DB check</h1>
+<h3> <%= HelloClass.check() %>  </h3>
 </body>
 </html>
