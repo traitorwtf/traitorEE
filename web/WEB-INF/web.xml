@@ -6,7 +6,7 @@
     <!-- define specific error handler -->
     <error-page>
         <error-code>404</error-code>
-        <location>/pages/ErrorPage.html</location>
+        <location>/pages/test/ErrorPage.html</location>
     </error-page>
 
     <!-- define servlets -->
@@ -26,4 +26,17 @@
         <res-type>javax.sql.DataSource</res-type>
         <res-auth>Container</res-auth>
     </resource-ref>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <jsp-config>
+        <jsp-property-group>
+            <display-name>header_and_footer</display-name>
+            <url-pattern>/pages/*</url-pattern>
+            <page-encoding>UTF-8</page-encoding>
+            <include-prelude>/WEB-INF/jspf/header.jspf</include-prelude>
+            <include-coda>/WEB-INF/jspf/footer.jspf</include-coda>
+        </jsp-property-group>
+    </jsp-config>
 </web-app>

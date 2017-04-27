@@ -1,4 +1,4 @@
-package Anime;
+package AnimePage;
 
 
 import DBConnection.Database;
@@ -13,9 +13,18 @@ import java.util.ArrayList;
  * Created by traitorwtf on 26.04.2017.
  */
 public class GenreList {
+    private ArrayList<Genre> genreList = new ArrayList<>();
 
-    public ArrayList<String> getGenre(){
-        ArrayList<String> getGenre = new ArrayList<>();
+    public ArrayList<Genre> getGenreList() {
+        System.out.println(genreList.isEmpty());
+        if (genreList.isEmpty()) {
+            return getGenre();
+        } else {
+            return genreList;
+        }
+    }
+
+    private ArrayList<Genre> getGenre(){
 
         Statement statement = null;
         ResultSet resultSet = null;
@@ -25,24 +34,24 @@ public class GenreList {
         connection = Database.getConnection();
         statement = connection.createStatement();
         resultSet = statement.executeQuery("select * from genre");
+
         while (resultSet.next()){
-            getGenre.add(resultSet.getString("type"));
+            Genre genre = new Genre();
+            genre.setId(resultSet.getInt("idgenre"));
+            genre.setType(resultSet.getString("type"));
+            genreList.add(genre);
         }
-
-
-
-
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {
-                if (statement!=null) statement.close();
                 if (resultSet!=null) resultSet.close();
-                if (connection!=null)connection.close();
+                if (statement!=null) statement.close();
+//                if (connection!=null)connection.close();
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
         }
-        return getGenre;
+        return genreList;
     }
 }

@@ -1,0 +1,19 @@
+<%@ page import="AnimePage.Genre" %>
+
+
+<%@ page pageEncoding="UTF-8" %>
+
+<div class="sidebar1">
+    <h4>Список жанров:</h4>
+    <ul class="nav">
+        <jsp:useBean id="genreList" class="AnimePage.GenreList" scope="session"/>
+        <%
+            for (Genre genre : genreList.getGenreList()) {
+        %>
+        <li><a href="../../pages/anime.jsp"><%=genre.getType()%></a></li>
+        <%}%>
+    </ul>
+    <p>&nbsp;</p>
+</div>
+
+</div>
