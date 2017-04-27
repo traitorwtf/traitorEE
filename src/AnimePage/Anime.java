@@ -12,6 +12,7 @@ public class Anime {
     private int position;
     private double rating;
     private int series;
+    private byte[] picture;
 
     public int getId() {
         return id;
@@ -75,6 +76,14 @@ public class Anime {
 
     public void setSeries(int series) {
         this.series = series;
+    }
+
+    public byte[] getPicture() {
+        return picture;
+    }
+
+    public void setPicture(byte[] picture) {
+        this.picture = picture;
     }
 
     @Override

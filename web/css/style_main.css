@@ -1,4 +1,5 @@
-ul.nav a, ul.nav a:visited { 
+
+ul.nav a, ul.nav a:visited {
     padding: 5px 5px 5px 15px;
     display: block; 
     text-decoration: none;
@@ -43,8 +44,9 @@ a:hover, a:active, a:focus {
 .container {
     width: 1000px;
     background-color: #FFF;
-    margin: 0 auto; 
-    height:800px;
+    margin: 0 auto;
+    min-height: 800px;
+    overflow: hidden;
 }
 
 

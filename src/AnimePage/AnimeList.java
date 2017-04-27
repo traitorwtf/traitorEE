@@ -34,6 +34,7 @@ public class AnimeList {
                 int position = resultSet.getInt("position");
                 double rating = resultSet.getDouble("rating");
                 int series = resultSet.getInt("series");
+                byte[] picture = resultSet.getBytes("picture");
 
                 anime.setId(id);
                 anime.setName(name);
@@ -43,6 +44,7 @@ public class AnimeList {
                 anime.setPosition(position);
                 anime.setRating(rating);
                 anime.setSeries(series);
+                anime.setPicture(picture);
 
                 animeList.add(anime);
             }
@@ -66,7 +68,7 @@ public class AnimeList {
 
     public ArrayList<Anime> getAllAnime(){
 
-        return getAnime("SELECT anime.id, anime.name, anime.data, g.type as genre, s.name as studio, anime.position, anime.rating, anime.series from anime\n" +
+        return getAnime("SELECT anime.id, anime.name, anime.data, g.type as genre, s.name as studio, anime.position, anime.rating, anime.series, anime.picture from anime\n" +
                 "inner join genre g on anime.genre = g.idgenre\n" +
                 "inner join studio s on anime.studio = s.idstudio\n" +
                 "order by anime.id");
@@ -74,7 +76,7 @@ public class AnimeList {
 
     public ArrayList<Anime> getAnimeByGenre(String genre_id){
 
-        return getAnime("SELECT anime.id, anime.name, anime.data, g.type as genre, s.name as studio, anime.position, anime.rating, anime.series from anime\n" +
+        return getAnime("SELECT anime.id, anime.name, anime.data, g.type as genre, s.name as studio, anime.position, anime.rating, anime.series, anime.picture from anime\n" +
                 "inner join genre g on anime.genre = g.idgenre\n" +
                 "inner join studio s on anime.studio = s.idstudio\n" +
                 "where g.idgenre = " + genre_id + " order by anime.id");
