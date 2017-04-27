@@ -10,7 +10,7 @@
         <%
             for (Genre genre : genreList.getGenreList()) {
         %>
-        <li><a href="../../pages/anime.jsp"><%=genre.getType()%></a></li>
+        <li><a href="../../pages/anime.jsp?genre_id=<%=genre.getId()%>&name=<%=genre.getType()%>"><%=genre.getType()%></a></li>
         <%}%>
     </ul>
     <p>&nbsp;</p>

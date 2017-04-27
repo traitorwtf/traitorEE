@@ -72,7 +72,7 @@ public class AnimeList {
                 "order by anime.id");
     }
 
-    public ArrayList<Anime> getAnimeByGenre(int genre_id){
+    public ArrayList<Anime> getAnimeByGenre(String genre_id){
 
         return getAnime("SELECT anime.id, anime.name, anime.data, g.type as genre, s.name as studio, anime.position, anime.rating, anime.series from anime\n" +
                 "inner join genre g on anime.genre = g.idgenre\n" +
