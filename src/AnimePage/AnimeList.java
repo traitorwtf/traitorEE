@@ -81,4 +81,28 @@ public class AnimeList {
                 "inner join studio s on anime.studio = s.idstudio\n" +
                 "where g.idgenre = " + genre_id + " order by anime.id");
     }
+
+    public ArrayList<Anime> getAnimeBySearchName(String searchName){
+
+        return getAnime("SELECT anime.id, anime.name, anime.data, g.type as genre, s.name as studio, anime.position, anime.rating, anime.series, anime.picture from anime\n" +
+                "inner join genre g on anime.genre = g.idgenre\n" +
+                "inner join studio s on anime.studio = s.idstudio\n" +
+                "where lower(anime.name) like'%" + searchName + "%' ");
+    }
+
+    public ArrayList<Anime> getAnimeBySearchGenre(String searchGenre){
+
+        return getAnime("SELECT anime.id, anime.name, anime.data, g.type as genre, s.name as studio, anime.position, anime.rating, anime.series, anime.picture from anime\n" +
+                "inner join genre g on anime.genre = g.idgenre\n" +
+                "inner join studio s on anime.studio = s.idstudio\n" +
+                "where lower(g.type) like'%" + searchGenre + "%' ");
+    }
+
+    public ArrayList<Anime> getAnimeBySearchStudio(String searchStudio){
+
+        return getAnime("SELECT anime.id, anime.name, anime.data, g.type as genre, s.name as studio, anime.position, anime.rating, anime.series, anime.picture from anime\n" +
+                "inner join genre g on anime.genre = g.idgenre\n" +
+                "inner join studio s on anime.studio = s.idstudio\n" +
+                "where lower(s.name) like'%" + searchStudio + "%' ");
+    }
 }

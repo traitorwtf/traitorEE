@@ -6,6 +6,7 @@
 <div class="sidebar1">
     <h4>Список жанров:</h4>
     <ul class="nav">
+        <li><a href="../../pages/anime.jsp?genre_id=9999&name=All+Anime">All</a></li>
         <jsp:useBean id="genreList" class="AnimePage.GenreList" scope="session"/>
         <%
             for (Genre genre : genreList.getGenreList()) {
